@@ -1,4 +1,4 @@
-const clientsControllers = {};
+const employeesControllers = {};
 import employees from "../models/employees.js"
 import employeesModel from "../models/employees.js"
 

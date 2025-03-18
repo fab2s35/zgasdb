@@ -2,17 +2,16 @@
 mi ruta (/api/products)*/
 
 import express from "express";
-import productsControllers from "../controllers/employeesControllers.js";
+import employeesControllers from "../controllers/employeesControllers.js";
 
 const router = express.Router();
 
 router.route("/")
-.get(employeesControllers.getProducts)
-.post(productsControllers.insertProducts)
+.get(employeesControllers.getEmployees)
+.post(employeesControllers.insertEmployees)
 
 router.route("/:id")
-.put(productsControllers.updateProducts)
-.delete(productsControllers.deleteProducts)
+.put(employeesControllers.updateEmployees)
+.delete(employeesControllers.deleteEmployees)
 
 export default router;
-

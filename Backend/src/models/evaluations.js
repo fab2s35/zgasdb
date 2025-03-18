@@ -1,25 +1,29 @@
 /*Fields:
-Coments
-Rating
-idClient */
+comment
+grade
+role
+idEmployee */
 
 import {Schema, model} from "mongoose";
 
-const reviewSchema = new Schema(
+const evaluationSchema = new Schema(
     {
         comment: {
             type: String,
             require: true
         },
-        ratting:{
+        grade:{
             type: Number,
             requiere: true,
-            min: 1,
-            max: 5
+            min: 1
         },
-        idClient:{
+        role:{
+            type: String,
+            requiere: true
+        },
+        idEmployee:{
             type: Schema.Types.ObjectId,
-            ref: "clients",
+            ref: "employees",
             requiere: true
         }
     }, {
@@ -28,4 +32,4 @@ const reviewSchema = new Schema(
     }
 )
 
-export default model("Review", reviewSchema);
+export default model("Evaluation", evaluationSchema); 

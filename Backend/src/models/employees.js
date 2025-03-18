@@ -14,50 +14,64 @@
 
 import { Schema, model } from "mongoose";
 
-const employeesSchema = new Schema({
-    name:{
+const employeeSchema = new Schema(
+  {
+    name: {
+      type: String,
+      require: true,
+    },
+
+    lastName: {
+      type: String,
+    },
+
+    birthday: {
+      type: Date,
+      require: true,
+      min: 0,
+    },
+
+    email: {
         type: String,
-        require: true
-    },
+      },
 
-    lastName:{
+      address: {
         type: String,
-        require: true
-    },
+      },
 
-    birthday:{
-        type: Date,
-        require: true
+    password: {
+      type: Number,
+      require: true,
+      min: 8,
     },
-
-    email:{
-        type:String,
-        require: true
-    },
-
-    address:{
+    hireDate: {
         type: String,
-        require: true
-    },
+      },
 
-    hireDate:{
-        type: Date,
-        require: true
-    },
+    telephone: {
+        type: Number,
+        require: true,
+        min: 8,
+      },
 
-    password:{
-        type: String,
-        require: true
-    },
+      dui: {
+        type: Number,
+        require: true,
+        min: 9,
+      },
+      isVerified: {
+        type: Boolean,
+      },
+      issnumber: {
+        type: Number,
+        require: true,
+        min: 8,
+      },
+  },
+  {
+    timestamps: true,
+    strict: false,
+  }
+);
 
-    telephone:{
-        type: Numberer,
-        require: true
-    },
-
-    dui:{
-        
-    }
-})
-
-export default model("Employees", employeesSchema);
+export default model("Employees", employeeSchema);

@@ -9,5 +9,7 @@ router.route("/")
 .post(reviewController.insertReview);
 
 router.route("/:id")
-.put(reviewController.insertReview)
+.put(reviewController.updateReview)
 .delete(reviewController.deleteReview);
+
+export default router;
